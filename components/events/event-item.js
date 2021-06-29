@@ -3,7 +3,7 @@ import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import classes from "./event-item.module.css";
 import Button from "../UI/button";
-
+import Image from "next/image";
 function EventItem({ title, image, date, location, id }) {
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -15,7 +15,7 @@ function EventItem({ title, image, date, location, id }) {
   const exploreLink = `/events/${id}`;
   return (
     <li className={classes.item} key={id}>
-      <img src={"/" + image} alt="no_image" />
+      <Image src={"/" + image} alt="no_image" width={250} height={160} />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>

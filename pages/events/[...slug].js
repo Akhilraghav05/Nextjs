@@ -6,15 +6,16 @@ import ResultsTitle from "../../components/events/results-title/results-title";
 import { getFilteredEvents } from "../../helpers/api-util";
 function FilteredEventPage(props) {
   const router = useRouter();
-  const urlParams = router.query.slug;
-  if (!urlParams) return <p className="center">loading .....</p>;
-  const [year, month] = urlParams;
-  const numYear = +year;
-  const numMonth = +month;
+  // const urlParams = router.query.slug;
+  // if (!urlParams) return <p className="center">loading .....</p>;
+  // const [year, month] = urlParams;
+  // const numYear = +year;
+  // const numMonth = +month;
   // const filteredEvents = getFilteredEvents({ year: numYear, month: numMonth });
   if (!props.events || props.events.length === 0)
     return <h2>No events found</h2>;
-  const date = new Date(props.date.numYear, props.date.numMonth - 1);
+  const date = new Date(props.date.year, props.date.month - 1);
+  console.log(date);
   return (
     <Fragment>
       <ResultsTitle date={date} />

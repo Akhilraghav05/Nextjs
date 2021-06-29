@@ -8,7 +8,7 @@ function ResultsTitle(props) {
     month: 'long',
     year: 'numeric',
   });
-
+  console.log(humanReadableDate);
   return (
     <section className={classes.title}>
       <h1>Events in {humanReadableDate}</h1>
